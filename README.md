@@ -3,6 +3,7 @@ VariableContent
 Sitecore module that allows content editors to create content with one or more placeholders which reference content outside the current field.
 
 Consider the following use cases:
+
   • Shared content such as company name, copyright information, email address, etc.
   • Dynamic content like copyright date
   • Content passed along in a query string parameter
