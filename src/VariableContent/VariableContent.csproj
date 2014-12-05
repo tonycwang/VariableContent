@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B136CFBB-AAA9-4FB7-BE31-76D0467B0D37}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>VariableContent</RootNamespace>
+    <AssemblyName>VariableContent</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\VariableContent.XML</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Sitecore.Kernel">
+      <HintPath>bin\Sitecore.Kernel.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Domain\BaseTemplates\BaseMapping.cs" />
+    <Compile Include="Domain\BaseTemplates\BaseVariableMapping.cs" />
+    <Compile Include="Domain\MappingTemplates\ContentMapping.cs" />
+    <Compile Include="Domain\MappingTemplates\DateTimeMapping.cs" />
+    <Compile Include="Domain\MappingTemplates\FieldMapping.cs" />
+    <Compile Include="Domain\MappingTemplates\MappingSet.cs" />
+    <Compile Include="Domain\MappingTemplates\QueryStringMapping.cs" />
+    <Compile Include="Domain\MappingTemplates\SessionMapping.cs" />
+    <Compile Include="Domain\SectionTemplates\VariableContent.cs" />
+    <Compile Include="Enclosure.cs" />
+    <Compile Include="Handlers\IVariableContentHandler.cs" />
+    <Compile Include="Handlers\Mapping\ExplicitVariable\ContentMappingHandler.cs" />
+    <Compile Include="Handlers\Mapping\ExplicitVariable\DateTimeMappingHandler.cs" />
+    <Compile Include="Handlers\Mapping\ExplicitVariable\FieldMappingHandler.cs" />
+    <Compile Include="Handlers\Mapping\ExplicitVariable\QueryStringMappingHandler.cs" />
+    <Compile Include="Handlers\Mapping\ExplicitVariable\SessionMappingHandler.cs" />
+    <Compile Include="Handlers\Mapping\ImplicitVariable\SessionMappingHandler.cs" />
+    <Compile Include="Handlers\Mapping\ImplicitVariable\QueryStringMappingHandler.cs" />
+    <Compile Include="Handlers\Mapping\IMappingHandler.cs" />
+    <Compile Include="Handlers\Mapping\MappingArgs.cs" />
+    <Compile Include="Handlers\Mapping\ImplicitVariable\DictionaryMappingHandler.cs" />
+    <Compile Include="Handlers\VariableContentHandler.cs" />
+    <Compile Include="InsertRules\MappingSetInsertRule.cs" />
+    <Compile Include="Pipeline\RenderingField\VariableReplace.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
